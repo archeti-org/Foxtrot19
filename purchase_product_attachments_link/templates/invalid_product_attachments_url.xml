@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="invalid_attachments_url"
+              name="Invalid PO Product Attachments URL...">
+        <div class="wrap">
+            <div class="container">
+                <div class="row mt64 mb32"/>
+                <div class="jumbotron mt32">
+                    <h1>Invalid...</h1>
+                    <p>This URL is invalid or has expired...</p>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

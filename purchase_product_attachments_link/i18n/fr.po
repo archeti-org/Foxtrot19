@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_product_attachments_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-12 12:25+0000\n"
+"PO-Revision-Date: 2023-04-12 12:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_product_attachments_link
+#: model:ir.model,name:purchase_product_attachments_link.model_ir_attachment
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: purchase_product_attachments_link
+#: model_terms:ir.ui.view,arch_db:purchase_product_attachments_link.purchase_order_view_form_inherit
+msgid "Attachment URL"
+msgstr "Attachement Url"
+
+#. module: purchase_product_attachments_link
+#: model:ir.model.fields,field_description:purchase_product_attachments_link.field_purchase_order__attachment_url
+msgid "Attachment Url"
+msgstr "Attachement Url"
+
+#. module: purchase_product_attachments_link
+#: model:ir.actions.server,name:purchase_product_attachments_link.ir_cron_check_attachment_url_expiration_ir_actions_server
+#: model:ir.cron,cron_name:purchase_product_attachments_link.ir_cron_check_attachment_url_expiration
+msgid "Check Expiration of product attachments URL"
+msgstr "Vérifier l'URL d'expiration des attachements du produit"
+
+#. module: purchase_product_attachments_link
+#: model_terms:ir.ui.view,arch_db:purchase_product_attachments_link.purchase_order_view_form_inherit
+msgid "Generate product attachments URL"
+msgstr "Générer l'URL des produits"
+
+#. module: purchase_product_attachments_link
+#: model:ir.model.fields,field_description:purchase_product_attachments_link.field_ir_attachment__hash_code
+#: model:ir.model.fields,field_description:purchase_product_attachments_link.field_mrp_document__hash_code
+msgid "Hash code"
+msgstr ""
+
+#. module: purchase_product_attachments_link
+#: model_terms:ir.ui.view,arch_db:purchase_product_attachments_link.invalid_attachments_url
+msgid "Invalid..."
+msgstr "Ce lien est invalide..."
+
+#. module: purchase_product_attachments_link
+#: model:ir.model,name:purchase_product_attachments_link.model_product_template
+msgid "Product"
+msgstr "Produit"
+
+#. module: purchase_product_attachments_link
+#: model:ir.model,name:purchase_product_attachments_link.model_product_product
+msgid "Product Variant"
+msgstr "Variante de produit"
+
+#. module: purchase_product_attachments_link
+#: model:ir.model,name:purchase_product_attachments_link.model_purchase_order
+msgid "Purchase Order"
+msgstr "Bon de commande"
+
+#. module: purchase_product_attachments_link
+#: model_terms:ir.ui.view,arch_db:purchase_product_attachments_link.invalid_attachments_url
+msgid "This URL is invalid or has expired..."
+msgstr "Cette URL n'est pas valide ou a expiré..."
+
+#. module: purchase_product_attachments_link
+#: model:ir.model.fields,field_description:purchase_product_attachments_link.field_purchase_order__url_expiration_date
+msgid "Url Expiration Date"
+msgstr "Date d'expiration de l'URL"
+
+#. module: purchase_product_attachments_link
+#: model:ir.model.fields,field_description:purchase_product_attachments_link.field_purchase_order__attachments_url_validity
+msgid "Url is Valid?"
+msgstr "L'URL est valide?"
