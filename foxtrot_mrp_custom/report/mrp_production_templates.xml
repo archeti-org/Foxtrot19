@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Finished product image, next to the "Quantity Producing" block -->
+    <template id="report_mrporder_inherit_foxtrot" inherit_id="mrp.report_mrporder">
+        <xpath expr="//div[@class='col-3'][@t-if='o.qty_producing']" position="after">
+            <div class="col-3" t-if="o.product_id.image_128">
+                <strong>Product Image:</strong><br/>
+<!--                t-att-src="image_data_uri(o.product_id.image_128)"-->
+                <img t-att-src="o.product_id._foxtrot_report_image_data_uri()"
+                     style="max-width: 100px; max-height: 100px;"
+                     alt="Product image"/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Components image column, as first column of the table -->
+    <template id="report_mrp_production_components_inherit_foxtrot" inherit_id="mrp.report_mrp_production_components">
+        <xpath expr="//thead/tr/th[1]" position="before">
+            <th>Image</th>
+        </xpath>
+        <xpath expr="//tr[@t-foreach='o.move_raw_ids']/td[1]" position="before">
+            <td>
+                <!--                     t-att-src="image_data_uri(raw_line.product_id.image_128)"-->
+                <img t-if="raw_line.product_id.image_128"
+                     t-att-src="raw_line.product_id._foxtrot_report_image_data_uri()"
+                     style="max-width: 64px; max-height: 64px;"
+                     alt="Component image"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>
