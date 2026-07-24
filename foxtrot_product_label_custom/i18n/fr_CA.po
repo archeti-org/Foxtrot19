@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* foxtrot_product_label_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 22:33+0000\n"
+"PO-Revision-Date: 2026-07-24 22:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.actions.report,print_report_name:foxtrot_product_label_custom.action_report_product_label_4x1_75
+msgid "'Products Labels 4x1.75 - %s' % (object.name)"
+msgstr "'Étiquettes de produits 4x1,75 - %s' % (object.name)"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.actions.report,print_report_name:foxtrot_product_label_custom.action_report_product_label_4x4
+msgid "'Products Labels 4x4 - %s' % (object.name)"
+msgstr "'Étiquettes de produits 4x4 - %s' % (object.name)"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model.fields.selection,name:foxtrot_product_label_custom.selection__product_label_layout__print_format__foxtrot_4x1_75
+msgid "4\" x 1 3/4\""
+msgstr ""
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model.fields.selection,name:foxtrot_product_label_custom.selection__product_label_layout__print_format__foxtrot_4x4
+msgid "4\" x 4\""
+msgstr ""
+
+#. module: foxtrot_product_label_custom
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x1_75
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x4
+msgid "CATEGORY"
+msgstr "CATÉGORIE"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model,name:foxtrot_product_label_custom.model_product_label_layout
+msgid "Choose the sheet layout to print the labels"
+msgstr "Choisir le modèle pour imprimer les étiquettes"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_label_layout__display_name
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_product__display_name
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_template__display_name
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_report_foxtrot_product_label_custom_report_product_label_4x1_75__display_name
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_report_foxtrot_product_label_custom_report_product_label_4x4__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_label_layout__print_format
+msgid "Format"
+msgstr ""
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_label_layout__id
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_product__id
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_product_template__id
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_report_foxtrot_product_label_custom_report_product_label_4x1_75__id
+#: model:ir.model.fields,field_description:foxtrot_product_label_custom.field_report_foxtrot_product_label_custom_report_product_label_4x4__id
+msgid "ID"
+msgstr "Identifiant"
+
+#. module: foxtrot_product_label_custom
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x1_75
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x4
+msgid "INSERT PHOTO"
+msgstr "INSÉRER PHOTO"
+
+#. module: foxtrot_product_label_custom
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x4
+msgid "PRICE"
+msgstr "PRIX"
+
+#. module: foxtrot_product_label_custom
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x1_75
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x4
+msgid "PRODUCT"
+msgstr "PRODUIT"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model,name:foxtrot_product_label_custom.model_product_template
+msgid "Product"
+msgstr "Produit"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.actions.report,name:foxtrot_product_label_custom.action_report_product_label_4x1_75
+msgid "Product Label 4\" x 1 3/4\" (PDF)"
+msgstr "Étiquette de produit 4\" x 1 3/4\" (PDF)"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.actions.report,name:foxtrot_product_label_custom.action_report_product_label_4x4
+msgid "Product Label 4\" x 4\" (PDF)"
+msgstr "Étiquette de produit 4\" x 4\" (PDF)"
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model,name:foxtrot_product_label_custom.model_report_foxtrot_product_label_custom_report_product_label_4x1_75
+msgid "Product Label Report 4\" x 1 3/4\""
+msgstr "Rapport d'étiquette de produit 4\" x 1 3/4\""
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model,name:foxtrot_product_label_custom.model_report_foxtrot_product_label_custom_report_product_label_4x4
+msgid "Product Label Report 4\" x 4\""
+msgstr "Rapport d'étiquette de produit 4\" x 4\""
+
+#. module: foxtrot_product_label_custom
+#: model:ir.model,name:foxtrot_product_label_custom.model_product_product
+msgid "Product Variant"
+msgstr "Variante de produit"
+
+#. module: foxtrot_product_label_custom
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x1_75
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x4
+msgid "Product photo"
+msgstr "PHOTO DU PRODUIT"
+
+#. module: foxtrot_product_label_custom
+#: model_terms:ir.ui.view,arch_db:foxtrot_product_label_custom.report_simple_label_4x4
+msgid "SUPPLIER"
+msgstr "FOURNISSEUR"
