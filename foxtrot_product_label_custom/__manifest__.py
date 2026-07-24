@@ -6,7 +6,7 @@
     'author': 'ArcheTI',
     'website': 'https://archeti.com',
     'license': 'LGPL-3',
-    'depends': ['product'],
+    'depends': ['product', 'foxtrot_report_image'],
     'data': [
         'report/product_label_reports.xml',
         'report/product_label_templates.xml',

@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
 
-# (columns, rows) per Foxtrot label format.
-FOXTROT_LABEL_DIMENSIONS = {
-    'foxtrot_4x4': (1, 2),      # 1 column × 2 rows
-    'foxtrot_4x1_75': (1, 4),   # 1 column × 4 rows
-}
 
 FOXTROT_PRINT_FORMATS = {
     'foxtrot_4x4': 'foxtrot_product_label_custom.action_report_product_label_4x4',
@@ -18,8 +13,8 @@ class ProductLabelLayout(models.TransientModel):
 
     print_format = fields.Selection(
         selection_add=[
-            ('foxtrot_4x4', '4" x 4"'),
-            ('foxtrot_4x1_75', '4" x 1 3/4"'),
+            ('foxtrot_4x4', '4 x 4'),
+            ('foxtrot_4x1_75', '4 x 1 3/4'),
         ],
         ondelete={
             'foxtrot_4x4': 'set default',
@@ -29,14 +24,14 @@ class ProductLabelLayout(models.TransientModel):
 
     @api.depends('print_format')
     def _compute_dimensions(self):
-        foxtrot_wizards = self.filtered(
-            lambda w: w.print_format in FOXTROT_LABEL_DIMENSIONS)
-        for wizard in foxtrot_wizards:
-            wizard.columns, wizard.rows = FOXTROT_LABEL_DIMENSIONS[
-                wizard.print_format]
-        other_wizards = self - foxtrot_wizards
-        if other_wizards:
-            super(ProductLabelLayout, other_wizards)._compute_dimensions()
+        super()._compute_dimensions()
+        for wizard in self:
+            if wizard.print_format == 'foxtrot_4x4':
+                wizard.columns = 1
+                wizard.rows = 4
+            if wizard.print_format == 'foxtrot_4x1_75':
+                wizard.columns = 1
+                wizard.rows = 2
 
     def _prepare_report_data(self):
         xml_id, data = super()._prepare_report_data()
