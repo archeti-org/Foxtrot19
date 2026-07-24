@@ -28,7 +28,7 @@
                         </table>
                     </td>
                     <td style="width: 67.6mm; text-align: center; vertical-align: middle; padding: 2mm; background-color: #f2f2f2;">
-                        <t t-set="label_image" t-value="product._foxtrot_label_image_data_uri()"/>
+                        <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
                         <img t-if="label_image"
                              t-att-src="label_image"
                              style="max-width: 60mm; max-height: 47mm;"
@@ -124,7 +124,7 @@
                         </t>
                     </td>
                     <td style="width: 34%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #c8860a;">
-                        <t t-set="label_image" t-value="product._foxtrot_label_image_data_uri()"/>
+                        <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
                         <img t-if="label_image"
                              t-att-src="label_image"
                              style="max-width: 28mm; max-height: 20mm;"

@@ -4,6 +4,7 @@ import io
 import logging
 
 from PIL import Image
+from PIL import WebPImagePlugin  # noqa: F401  # register WebP decoder
 
 from odoo.tools.image import image_data_uri
 from odoo.tools.mimetypes import guess_mimetype
@@ -14,11 +15,11 @@ _logger = logging.getLogger(__name__)
 WKHTMLTOPDF_SAFE_MIMETYPES = ('image/png', 'image/jpeg', 'image/gif')
 
 
-def foxtrot_label_image_data_uri(image_b64):
+def image_to_report_data_uri(image_b64):
     """Return an image data URI usable in PDF reports.
 
-    Odoo 19 may store product images as WebP, which wkhtmltopdf cannot
-    decode. Convert unsupported formats to PNG when needed.
+    Odoo 19 may store images as WebP, which wkhtmltopdf cannot decode.
+    Convert unsupported formats to PNG when needed.
     """
     if not image_b64:
         return False
@@ -27,6 +28,8 @@ def foxtrot_label_image_data_uri(image_b64):
         return image_data_uri(image_b64)
     try:
         image = Image.open(io.BytesIO(image_bin))
+        # WebP variants are often stored full-size (image_process skips
+        # WebP), so resize to keep the PDF small.
         image.thumbnail((256, 256))
         if image.mode not in ('RGB', 'RGBA'):
             image = image.convert('RGBA')
@@ -36,6 +39,6 @@ def foxtrot_label_image_data_uri(image_b64):
             buffer.getvalue()).decode()
     except Exception:
         _logger.warning(
-            "Could not convert product image to PNG for label report",
+            "Could not convert image to PNG for PDF report",
             exc_info=True)
         return image_data_uri(image_b64)
