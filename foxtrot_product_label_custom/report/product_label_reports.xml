@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_product_label_4x4" model="ir.actions.report">
+            <field name="name">Product Label 4" x 4" (PDF)</field>
+            <field name="model">product.template</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">foxtrot_product_label_custom.report_product_label_4x4</field>
+            <field name="report_file">foxtrot_product_label_custom.report_product_label_4x4</field>
+            <field name="paperformat_id" ref="product.paperformat_label_sheet"/>
+            <field name="print_report_name">'Products Labels 4x4 - %s' % (object.name)</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="action_report_product_label_4x1_75" model="ir.actions.report">
+            <field name="name">Product Label 4" x 1 3/4" (PDF)</field>
+            <field name="model">product.template</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">foxtrot_product_label_custom.report_product_label_4x1_75</field>
+            <field name="report_file">foxtrot_product_label_custom.report_product_label_4x1_75</field>
+            <field name="paperformat_id" ref="product.paperformat_label_sheet"/>
+            <field name="print_report_name">'Products Labels 4x1.75 - %s' % (object.name)</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
