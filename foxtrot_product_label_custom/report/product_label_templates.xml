@@ -6,13 +6,13 @@
     <template id="report_simple_label_4x4">
         <td t-att-style="make_invisible and 'visibility:hidden;'" style="padding: 0 0 3mm 0; vertical-align: top;">
             <!-- Exact label size: 4" x 4" = 101.6mm x 101.6mm -->
-            <table style="width: 101.6mm; height: 101.6mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #c8860a; font-family: DejaVu Sans, sans-serif; font-size: 9px; color: #000;">
+            <table style="width: 101.6mm; height: 101.6mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #f7b500; font-family: DejaVu Sans, sans-serif; font-size: 9px; color: #000;">
                 <!-- Row 1: default code + product photo -->
                 <tr style="height: 53mm;">
-                    <td style="width: 34mm; padding: 0; vertical-align: top; border-right: 1px solid #c8860a;">
+                    <td style="width: 34mm; padding: 0; vertical-align: top; border-right: 1px solid #f7b500;">
                         <table style="width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed;">
                             <tr style="height: 18mm;">
-                                <td style="background-color: #c8860a; color: #000; text-align: center; vertical-align: middle; font-size: 16px; font-weight: bold; padding: 2mm; border-bottom: 1px solid #c8860a;">
+                                <td style="background-color: #f7b500; color: #000; text-align: center; vertical-align: middle; font-size: 16px; font-weight: bold; padding: 2mm; border-bottom: 1px solid #f7b500;">
                                     <span t-field="product.default_code"/>
                                 </td>
                             </tr>
@@ -38,8 +38,8 @@
                 </tr>
                 <!-- Row 2: product name -->
                 <tr style="height: 16mm;">
-                    <td colspan="2" style="padding: 0; vertical-align: top; border-top: 1px solid #c8860a; border-bottom: 1px solid #c8860a;">
-                        <div style="background-color: #c8860a; color: #fff; text-align: center; font-size: 7px; font-weight: bold; letter-spacing: 1px; padding: 1mm;">
+                    <td colspan="2" style="padding: 0; vertical-align: top; border-top: 1px solid #f7b500; border-bottom: 1px solid #f7b500;">
+                        <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; letter-spacing: 1px; padding: 1mm;">
                             PRODUCT
                         </div>
                         <div style="background-color: #fff; color: #000; text-align: center; font-size: 11px; font-weight: bold; padding: 2mm;">
@@ -52,16 +52,16 @@
                     <td colspan="2" style="padding: 0; vertical-align: top;">
                         <table style="width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed;">
                             <tr>
-                                <td style="width: 33%; border-right: 1px solid #c8860a; vertical-align: top; padding: 0;">
-                                    <div style="background-color: #c8860a; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
+                                <td style="width: 33%; border-right: 1px solid #f7b500; vertical-align: top; padding: 0;">
+                                    <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
                                         SUPPLIER
                                     </div>
                                     <div style="text-align: center; padding: 2mm; font-size: 9px; min-height: 18mm;">
                                         <span t-out="product._foxtrot_label_supplier_name()"/>
                                     </div>
                                 </td>
-                                <td style="width: 34%; border-right: 1px solid #c8860a; vertical-align: top; padding: 0;">
-                                    <div style="background-color: #c8860a; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
+                                <td style="width: 34%; border-right: 1px solid #f7b500; vertical-align: top; padding: 0;">
+                                    <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
                                         CATEGORY
                                     </div>
                                     <div style="text-align: center; padding: 2mm; font-size: 9px; min-height: 18mm;">
@@ -69,7 +69,7 @@
                                     </div>
                                 </td>
                                 <td style="width: 33%; vertical-align: top; padding: 0;">
-                                    <div style="background-color: #c8860a; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
+                                    <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
                                         PRICE
                                     </div>
                                     <div style="text-align: center; padding: 2mm; font-size: 12px; font-weight: bold; min-height: 18mm;">
@@ -96,16 +96,16 @@
     <template id="report_simple_label_4x1_75">
         <td t-att-style="make_invisible and 'visibility:hidden;'" style="padding: 0 0 3mm 0; vertical-align: top;">
             <!-- Exact label size: 4" x 1 3/4" = 101.6mm x 44.45mm -->
-            <table style="width: 101.6mm; height: 44.45mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #c8860a; font-family: DejaVu Sans, sans-serif; font-size: 8px; color: #000;">
+            <table style="width: 101.6mm; height: 44.45mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #f7b500; font-family: DejaVu Sans, sans-serif; font-size: 8px; color: #000;">
                 <!-- Row 1: default code -->
                 <tr style="height: 10mm;">
-                    <td colspan="3" style="background-color: #c8860a; color: #000; text-align: center; vertical-align: middle; font-size: 14px; font-weight: bold; padding: 1mm;">
+                    <td colspan="3" style="background-color: #f7b500; color: #000; text-align: center; vertical-align: middle; font-size: 14px; font-weight: bold; padding: 1mm;">
                         <span t-field="product.default_code"/>
                     </td>
                 </tr>
                 <!-- Row 2: product name -->
                 <tr style="height: 8mm;">
-                    <td colspan="3" style="background-color: #c8860a; padding: 0; border-top: 1px solid #c8860a; border-bottom: 1px solid #c8860a;">
+                    <td colspan="3" style="background-color: #f7b500; padding: 0; border-top: 1px solid #f7b500; border-bottom: 1px solid #f7b500;">
                         <div style="color: #fff; text-align: center; font-size: 6px; font-weight: bold; letter-spacing: 1px; padding-top: 0.5mm;">
                             PRODUCT
                         </div>
@@ -116,14 +116,14 @@
                 </tr>
                 <!-- Row 3: barcode / photo / category -->
                 <tr style="height: 26.45mm;">
-                    <td style="width: 33%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #c8860a;">
+                    <td style="width: 33%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
                         <t t-if="barcode">
                             <div t-out="barcode"
                                  t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:28mm;height:10mm'}"/>
                             <div style="font-size: 7px; margin-top: 0.5mm;" t-out="barcode"/>
                         </t>
                     </td>
-                    <td style="width: 34%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #c8860a;">
+                    <td style="width: 34%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
                         <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
                         <img t-if="label_image"
                              t-att-src="label_image"
@@ -132,7 +132,7 @@
                         <span t-else="" style="font-style: italic; color: #666;">INSERT PHOTO</span>
                     </td>
                     <td style="width: 33%; vertical-align: top; padding: 0;">
-                        <div style="background-color: #c8860a; color: #fff; text-align: center; font-size: 6px; font-weight: bold; padding: 1mm;">
+                        <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 6px; font-weight: bold; padding: 1mm;">
                             CATEGORY
                         </div>
                         <div style="text-align: center; padding: 2mm; font-size: 8px;">
