@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <!-- ========================= Single label: 4" x 4" ========================= -->
+    <template id="report_simple_label_4x4">
+        <td t-att-style="make_invisible and 'visibility:hidden;'" style="padding: 0 0 3mm 0; vertical-align: top;">
+            <!-- Exact label size: 4" x 4" = 101.6mm x 101.6mm -->
+            <table style="width: 101.6mm; height: 101.6mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #f7b500; font-family: DejaVu Sans, sans-serif; font-size: 9px; color: #000;">
+                <!-- Row 1: default code + product photo -->
+                <tr style="height: 53mm;">
+                    <td style="width: 34mm; padding: 0; vertical-align: top; border-right: 1px solid #f7b500;">
+                        <table style="width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed;">
+                            <tr style="height: 18mm;">
+                                <td style="background-color: #f7b500; color: #000; text-align: center; vertical-align: middle; font-size: 16px; font-weight: bold; padding: 2mm; border-bottom: 1px solid #f7b500;">
+                                    <span t-field="product.default_code"/>
+                                </td>
+                            </tr>
+                            <tr style="height: 35mm;">
+                                <td style="text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2;">
+                                    <t t-if="barcode">
+                                        <div t-out="barcode"
+                                             t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:28mm;height:14mm'}"/>
+                                        <div style="font-size: 8px; margin-top: 1mm;" t-out="barcode"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 67.6mm; text-align: center; vertical-align: middle; padding: 2mm; background-color: #f2f2f2;">
+                        <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
+                        <img t-if="label_image"
+                             t-att-src="label_image"
+                             style="max-width: 60mm; max-height: 47mm;"
+                             alt="Product photo"/>
+                        <span t-else="" style="font-style: italic; color: #666;">INSERT PHOTO</span>
+                    </td>
+                </tr>
+                <!-- Row 2: product name -->
+                <tr style="height: 16mm;">
+                    <td colspan="2" style="padding: 0; vertical-align: top; border-top: 1px solid #f7b500; border-bottom: 1px solid #f7b500;">
+                        <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; letter-spacing: 1px; padding: 1mm;">
+                            PRODUCT
+                        </div>
+                        <div style="background-color: #fff; color: #000; text-align: center; font-size: 11px; font-weight: bold; padding: 2mm;">
+                            <span t-field="product.name"/>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 3: supplier / category / price -->
+                <tr style="height: 32.6mm;">
+                    <td colspan="2" style="padding: 0; vertical-align: top;">
+                        <table style="width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed;">
+                            <tr>
+                                <td style="width: 33%; border-right: 1px solid #f7b500; vertical-align: top; padding: 0;">
+                                    <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
+                                        SUPPLIER
+                                    </div>
+                                    <div style="text-align: center; padding: 2mm; font-size: 9px; min-height: 18mm;">
+                                        <span t-out="product._foxtrot_label_supplier_name()"/>
+                                    </div>
+                                </td>
+                                <td style="width: 34%; border-right: 1px solid #f7b500; vertical-align: top; padding: 0;">
+                                    <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
+                                        CATEGORY
+                                    </div>
+                                    <div style="text-align: center; padding: 2mm; font-size: 9px; min-height: 18mm;">
+                                        <span t-field="product.categ_id"/>
+                                    </div>
+                                </td>
+                                <td style="width: 33%; vertical-align: top; padding: 0;">
+                                    <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 7px; font-weight: bold; padding: 1mm;">
+                                        PRICE
+                                    </div>
+                                    <div style="text-align: center; padding: 2mm; font-size: 12px; font-weight: bold; min-height: 18mm;">
+                                        <t t-set="currency" t-value="(pricelist and pricelist.currency_id) or product.currency_id"/>
+                                        <t t-if="pricelist">
+                                            <span t-out="pricelist._get_product_price(product, 1, currency=currency)"
+                                                  t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="product.list_price"
+                                                  t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                        </t>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </template>
+
+    <!-- ====================== Single label: 4" x 1 3/4" ====================== -->
+    <template id="report_simple_label_4x1_75">
+        <td t-att-style="make_invisible and 'visibility:hidden;'" style="padding: 0 0 3mm 0; vertical-align: top;">
+            <!-- Exact label size: 4" x 1 3/4" = 101.6mm x 44.45mm -->
+            <table style="width: 101.6mm; height: 44.45mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #f7b500; font-family: DejaVu Sans, sans-serif; font-size: 8px; color: #000;">
+                <!-- Row 1: default code -->
+                <tr style="height: 10mm;">
+                    <td colspan="3" style="background-color: #f7b500; color: #000; text-align: center; vertical-align: middle; font-size: 14px; font-weight: bold; padding: 1mm;">
+                        <span t-field="product.default_code"/>
+                    </td>
+                </tr>
+                <!-- Row 2: product name -->
+                <tr style="height: 8mm;">
+                    <td colspan="3" style="background-color: #f7b500; padding: 0; border-top: 1px solid #f7b500; border-bottom: 1px solid #f7b500;">
+                        <div style="color: #fff; text-align: center; font-size: 6px; font-weight: bold; letter-spacing: 1px; padding-top: 0.5mm;">
+                            PRODUCT
+                        </div>
+                        <div style="background-color: #fff; color: #000; text-align: center; font-size: 9px; font-weight: bold; padding: 0.8mm 1mm;">
+                            <span t-field="product.name"/>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Row 3: barcode / photo / category -->
+                <tr style="height: 26.45mm;">
+                    <td style="width: 33%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
+                        <t t-if="barcode">
+                            <div t-out="barcode"
+                                 t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:28mm;height:10mm'}"/>
+                            <div style="font-size: 7px; margin-top: 0.5mm;" t-out="barcode"/>
+                        </t>
+                    </td>
+                    <td style="width: 34%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
+                        <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
+                        <img t-if="label_image"
+                             t-att-src="label_image"
+                             style="max-width: 28mm; max-height: 20mm;"
+                             alt="Product photo"/>
+                        <span t-else="" style="font-style: italic; color: #666;">INSERT PHOTO</span>
+                    </td>
+                    <td style="width: 33%; vertical-align: top; padding: 0;">
+                        <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 6px; font-weight: bold; padding: 1mm;">
+                            CATEGORY
+                        </div>
+                        <div style="text-align: center; padding: 2mm; font-size: 8px;">
+                            <span t-field="product.categ_id"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </template>
+
+    <!-- ========================= Sheet renderer (shared) ========================= -->
+    <template id="report_productlabel_foxtrot_sheet">
+        <t t-call="web.html_container">
+            <!-- Same top spacing approach as standard 2x7 / 4x7 labels -->
+            <t t-set="padding_page" t-value="padding_page or 'padding: 14mm 0 10mm 0;'"/>
+            <t t-foreach="range(page_numbers)" t-as="page">
+                <div class="o_label_sheet" t-att-style="padding_page">
+                    <!-- Center the single-column label strip on the A4 page -->
+                    <table class="my-0 table table-sm table-borderless"
+                           style="width: 101.6mm; margin: 0 auto; border-collapse: collapse;">
+                        <t t-foreach="range(rows)" t-as="row">
+                            <tr>
+                                <t t-foreach="range(columns)" t-as="column">
+                                    <t t-if="not current_quantity and quantity and not (current_data and current_data[1])">
+                                        <t t-set="current_data" t-value="quantity.popitem()"/>
+                                        <t t-set="product" t-value="current_data[0]"/>
+                                        <t t-set="barcode_and_qty" t-value="current_data[1].pop()"/>
+                                        <t t-set="barcode" t-value="barcode_and_qty[0]"/>
+                                        <t t-set="current_quantity" t-value="barcode_and_qty[1]"/>
+                                    </t>
+                                    <t t-if="current_quantity">
+                                        <t t-set="make_invisible" t-value="False"/>
+                                        <t t-set="current_quantity" t-value="current_quantity - 1"/>
+                                    </t>
+                                    <t t-elif="current_data and current_data[1]">
+                                        <t t-set="barcode_and_qty" t-value="current_data[1].pop()"/>
+                                        <t t-set="barcode" t-value="barcode_and_qty[0]"/>
+                                        <t t-set="current_quantity" t-value="barcode_and_qty[1] - 1"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="make_invisible" t-value="True"/>
+                                    </t>
+                                    <t t-if="label_format == '4x4'">
+                                        <t t-call="foxtrot_product_label_custom.report_simple_label_4x4"/>
+                                    </t>
+                                    <t t-elif="label_format == '4x1_75'">
+                                        <t t-call="foxtrot_product_label_custom.report_simple_label_4x1_75"/>
+                                    </t>
+                                </t>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- ========================= Report entry points ========================= -->
+    <template id="report_product_label_4x4">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-set="columns" t-value="1"/>
+                <t t-set="rows" t-value="2"/>
+                <t t-set="label_format" t-value="'4x4'"/>
+                <t t-set="padding_page" t-value="'padding: 14mm 0 10mm 0;'"/>
+                <t t-call="foxtrot_product_label_custom.report_productlabel_foxtrot_sheet"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_product_label_4x1_75">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-set="columns" t-value="1"/>
+                <t t-set="rows" t-value="4"/>
+                <t t-set="label_format" t-value="'4x1_75'"/>
+                <t t-set="padding_page" t-value="'padding: 14mm 0 10mm 0;'"/>
+                <t t-call="foxtrot_product_label_custom.report_productlabel_foxtrot_sheet"/>
+            </div>
+        </t>
+    </template>
+
+</data>
+</odoo>
