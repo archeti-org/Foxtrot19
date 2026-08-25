@@ -20,18 +20,18 @@
                                 <td style="text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2;">
                                     <t t-if="barcode">
                                         <div t-out="barcode"
-                                             t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:28mm;height:14mm'}"/>
+                                             t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:36mm;height:14mm'}"/>
                                         <div style="font-size: 8px; margin-top: 1mm;" t-out="barcode"/>
                                     </t>
                                 </td>
                             </tr>
                         </table>
                     </td>
-                    <td style="width: 67.6mm; text-align: center; vertical-align: middle; padding: 2mm; background-color: #f2f2f2;">
+                    <td style="width: 48.6mm; text-align: center; vertical-align: middle; padding: 2mm; background-color: #f2f2f2;">
                         <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
                         <img t-if="label_image"
                              t-att-src="label_image"
-                             style="max-width: 60mm; max-height: 47mm;"
+                             style="max-width: 48mm; max-height: 47mm;"
                              alt="Product photo"/>
                         <span t-else="" style="font-style: italic; color: #666;">INSERT PHOTO</span>
                     </td>
@@ -97,6 +97,11 @@
         <td t-att-style="make_invisible and 'visibility:hidden;'" style="padding: 0 0 3mm 0; vertical-align: top;">
             <!-- Exact label size: 4" x 1 3/4" = 101.6mm x 44.45mm -->
             <table style="width: 101.6mm; height: 44.45mm; border-collapse: collapse; table-layout: fixed; border: 1px solid #f7b500; font-family: DejaVu Sans, sans-serif; font-size: 8px; color: #000;">
+                <colgroup>
+                    <col style="width: 42%;"/>
+                    <col style="width: 32%;"/>
+                    <col style="width: 26%;"/>
+                </colgroup>
                 <!-- Row 1: default code -->
                 <tr style="height: 10mm;">
                     <td colspan="3" style="background-color: #f7b500; color: #000; text-align: center; vertical-align: middle; font-size: 14px; font-weight: bold; padding: 1mm;">
@@ -116,22 +121,22 @@
                 </tr>
                 <!-- Row 3: barcode / photo / category -->
                 <tr style="height: 26.45mm;">
-                    <td style="width: 33%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
+                    <td style="width: 42%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
                         <t t-if="barcode">
                             <div t-out="barcode"
-                                 t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:28mm;height:10mm'}"/>
+                                 t-options="{'widget': 'barcode', 'symbology': 'auto', 'img_style': 'width:36mm;height:11mm'}"/>
                             <div style="font-size: 7px; margin-top: 0.5mm;" t-out="barcode"/>
                         </t>
                     </td>
-                    <td style="width: 34%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
+                    <td style="width: 32%; text-align: center; vertical-align: middle; padding: 1mm; background-color: #f2f2f2; border-right: 1px solid #f7b500;">
                         <t t-set="label_image" t-value="product._foxtrot_report_image_data_uri()"/>
                         <img t-if="label_image"
                              t-att-src="label_image"
-                             style="max-width: 28mm; max-height: 20mm;"
+                             style="max-width: 26mm; max-height: 20mm;"
                              alt="Product photo"/>
                         <span t-else="" style="font-style: italic; color: #666;">INSERT PHOTO</span>
                     </td>
-                    <td style="width: 33%; vertical-align: top; padding: 0;">
+                    <td style="width: 26%; vertical-align: top; padding: 0;">
                         <div style="background-color: #f7b500; color: #fff; text-align: center; font-size: 6px; font-weight: bold; padding: 1mm;">
                             CATEGORY
                         </div>
