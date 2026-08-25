@@ -1,6 +1,6 @@
 {
     'name': 'Foxtrot Product Label Custom',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
     'category': 'Inventory/Inventory',
     'summary': 'Custom 4" x 4" and 4" x 1 3/4" product label formats',
     'author': 'ArcheTI',
